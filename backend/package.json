@@ -1,0 +1,24 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "ecommerce platform using mern stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modernman00/commerceJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modernman00/commerceJS/issues"
+  },
+  "homepage": "https://github.com/modernman00/commerceJS#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.17"
+  }
+}
