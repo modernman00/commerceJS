@@ -1,5 +1,6 @@
 const express = require('express');  // nodejs framework
-const cors = require('cors'); // allow for cross origin data api 
+const cors = require('cors'); // allow for cross origin data api
+const morgan = require('morgan') 
 require('dotenv').config(); // environment variable
 const mongoose = require('mongoose'); // mongodb 
 
@@ -7,6 +8,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors());
+app.use(morgan('dev'))
 app.use(express.json())
 // this functionality help us to use the req.body object
 app.use(express.urlencoded(

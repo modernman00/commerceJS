@@ -1,0 +1,37 @@
+{
+  "name": "Oolawale/commerceJS",
+  "version": "1.0.0",
+  "description": "ecommerce platform using mern stack",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.19",
+    "nodemon": "^2.0.4",
+    "react-bootstrap": "^1.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "validator": "^13.1.1",
+    "bootstrap": "^4.5.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modernman00/commerceJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modernman00/commerceJS/issues"
+  },
+  "homepage": "https://github.com/modernman00/commerceJS#readme"
+}
