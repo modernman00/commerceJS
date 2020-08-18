@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import isEmail from 'validator/es/lib/isEmail';
 import isEmpty from 'validator/es/lib/isEmpty';
 import equals from 'validator/es/lib/equals';
-import { } from "validator"
 import { Form, Button } from "react-bootstrap"
 import { message } from "../helper/Message"
-import {signUp} from "../../api/auth"
+// import axios from "axios"
+import { signUp } from "../../api/auth"
 // import  {register}  from '../data/formData';
 // import ErrorBoundary from '../ErrorBoundary';
 import loader from '../helper/Loader';
@@ -47,7 +47,6 @@ export const Register = () => {
     const submit = (e) => {
         e.preventDefault();
 
-
         if (isEmpty(username) || isEmpty(email) || isEmpty(password) || isEmpty(confirmPassword))
             setFormData({
                 ...formData, errorMsg: "All Fields are required"
@@ -62,33 +61,32 @@ export const Register = () => {
         })
 
         else {
-
             const data = { username, email, password }
 
             setFormData({
-                ...formData, loading : true
+                ...formData, loading: true
             })
-            // call the api for signup
+            //call the api for signup
             signUp(data)
-            .then(res=>{
-                console.log('success')
-                setFormData({
-                    username:null,
-                    email:null,
-                    password:null,
-                    confirmPassword: null,
-                    loading: false,
-                    successMsg: res.data.successMessage
-                })
-            })
-            .catch(err => {
-                console.log('failure', err)
-                setFormData({
-                    ...formData, loading : false
-                })
-            })
+                // axios.post("http://localhost:5000/Signup/create", data)
+                .then(res => {          
+                    setFormData({
+                        username: "",
+                        email: "",
+                        password: "",
+                        confirmPassword: "",
+                        loading: false,
+                        successMsg: res.data.successMessage
+                    })
 
-
+                  //  window.location = "/show"
+                })
+                .catch(err => {
+                    console.log('There is an failure', err.response.data.errors)
+                    setFormData({
+                        ...formData, loading: false, errorMsg: err.response.data.errors
+                    })
+                })
         }
 
 
@@ -129,7 +127,7 @@ export const Register = () => {
                 Submit
         </Button>
 
-            <p> {JSON.stringify(formData)} </p>
+            {/* <p> {JSON.stringify(formData)} </p> */}
 
 
         </Form>

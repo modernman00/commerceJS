@@ -3,6 +3,8 @@ const cors = require('cors'); // allow for cross origin data api
 const morgan = require('morgan') 
 require('dotenv').config(); // environment variable
 const mongoose = require('mongoose'); // mongodb 
+const routerSignup  = require('./route/Signup'); // router - import
+//const routerLogin = require('./routes/Login');  // router
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -32,10 +34,8 @@ connection.once('open', ()=>{
 
 // router
 
-app.get('/', function (req, res){
-   res.send(`<h1>OLUTOBI IS A GREAT GIRL </h1>`);
-})
-
+app.use('/Signup', routerSignup);  //now let us use the file that we imported
+//app.use('/login', routerLogin);
 
 
 

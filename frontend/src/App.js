@@ -8,6 +8,9 @@ import SignIn from "./components/account/SignIn"
 import NotFound from "./components/NotFound"
 import Navigator from "./components/Navigator"
 import "bootstrap/dist/css/bootstrap.min.css"
+import ShowAll from './components/ShowAll';
+import Profile from './components/account/Profile';
+import User from './components/account/User';
 
 
 const App = () => {
@@ -19,7 +22,10 @@ const App = () => {
       <Route exact path="/" component={Home}/>
       {/* <Route exact path="/register" component={SignUp}/> */}
       <Route exact path="/register" component={Register}/>
+       <Route exact path="/show" component={ShowAll}/>
+        <Route exact path="/profile" component={ Profile}/>
       <Route exact path="/login" component={SignIn}/>
+       <Route exact path="/user" component={User}/>
       <Route component={ NotFound }/>
 
       </Switch>
