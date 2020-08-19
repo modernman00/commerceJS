@@ -1,5 +1,5 @@
-import { setLocalStorage, getLocalStorage } from './localStorage';
-import { setCookie, getCookie } from "./cookie"
+import { setLocalStorage, getLocalStorage, removeLocalStorage } from './localStorage';
+import { setCookie, getCookie, removeCookie } from "./cookie"
 
 export const cookieStorageSet = (cookie, data) => {
     setCookie('token', cookie)
@@ -28,4 +28,9 @@ export const notAuthenticated = (cookie, data, redirect) => {
    
          window.location =redirect
     } 
+}
+
+export const logOut = (token, data) => {
+    removeCookie(token)
+    removeLocalStorage(data)
 }
