@@ -4,6 +4,7 @@
   "description": "ecommerce platform using mern stack",
   "main": "index.js",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "cors": "^2.8.5",

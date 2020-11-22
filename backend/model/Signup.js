@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
+// create a schema 1
+const Schema = mongoose.Schema;
+// 2
 const SignupSchema = new Schema({
     username: {
         type: String,
@@ -21,7 +23,7 @@ const SignupSchema = new Schema({
         trim: true,
         minlength: 1
     },
-        role: {
+    role: {
         type: Number,
         default: 0,
     },
@@ -30,6 +32,6 @@ const SignupSchema = new Schema({
         timestamps: true,
     }
 );
-
+// buils the model
 const Signup = mongoose.model('Signup', SignupSchema);
 module.exports = Signup;

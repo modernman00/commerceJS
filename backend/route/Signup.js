@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { checkSignup, showErrorSignUp, checkLogin, showErrorLogin } = require('./../middleware/Validator')
+const { checkSignup, showErrorSignUp, checkLogin, showErrorLogin } = require('../middleware/Validator')
 const { hashThePassword, compareHashPassword } = require('./../middleware/hashPass')
 const jwt = require('jsonwebtoken')
 const { jwtSecret, jwtExpire } = require("./../../config/keys")

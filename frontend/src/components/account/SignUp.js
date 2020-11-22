@@ -5,7 +5,6 @@ import  {register}  from '../data/formData';
 import ErrorBoundary from '../ErrorBoundary';
 //import axios from "axios"
 
-
 export default class SignUp extends Component {
     constructor(props) {
         super(props);
@@ -18,13 +17,14 @@ export default class SignUp extends Component {
             error: "",
             confirmPassword: "",
             data: register,
+            loading: false,
+            successMsg: ''
         };
     }
 
 
 
     Validate = (e) => {
-
         let value = e.target.value;
         let name = e.target.name;
         let err;
@@ -41,11 +41,8 @@ export default class SignUp extends Component {
 
     submit = (e) => {
         e.preventDefault();
-
         const {username, email, password} = this.state
-
         console.log(username, email, password)
-
         alert('submitted')
     }
 

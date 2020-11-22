@@ -18,7 +18,6 @@ app.use(express.urlencoded(
 ))
 
 // connection to the mongo database
-
 const uri = process.env.LOCAL_URL;
 
 mongoose.connect(uri, {
@@ -38,7 +37,7 @@ app.use('/Signup', routerSignup);  //now let us use the file that we imported
 //app.use('/login', routerLogin);
 
 
-
+// listen to the post
 app.listen(port, function (){
     console.log('listening on port ' + port)
 })

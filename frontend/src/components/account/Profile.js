@@ -12,8 +12,8 @@ export default function Profile() {
  
     },[])   
 
-    console.log(user)
-    return (
+    return (!user) ? notAuthenticated('token', 'user', 'login') :
+      
         <div>
 
            {user.username} 
@@ -22,5 +22,5 @@ export default function Profile() {
             You are in the profile page
             
         </div>
-    )
+    
 }

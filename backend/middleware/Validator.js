@@ -14,7 +14,7 @@ exports.checkSignup = [
         .withMessage('Password must be at least six characters'),
 
 ]
-
+// to check if the request is empty or has errors based on what I set up with checkSignup 
 exports.showErrorSignUp =  (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

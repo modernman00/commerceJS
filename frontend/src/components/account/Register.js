@@ -51,15 +51,12 @@ export const Register = () => {
             setFormData({
                 ...formData, errorMsg: "All Fields are required"
             })
-
         else if (!isEmail(email)) setFormData({
             ...formData, errorMsg: "Your email is not valid"
         })
-
         else if (!equals(password, confirmPassword)) setFormData({
             ...formData, errorMsg: "Your passwords do not match"
         })
-
         else {
             const data = { username, email, password }
 
@@ -69,17 +66,17 @@ export const Register = () => {
             //call the api for signup
             signUp(data)
                 // axios.post("http://localhost:5000/Signup/create", data)
-                .then(res => {          
+                .then(res => {
                     setFormData({
                         username: "",
                         email: "",
                         password: "",
                         confirmPassword: "",
                         loading: false,
-                        successMsg: res.data.successMessage
+                        successMsg: "Your application has been successfully submitted"
                     })
 
-                  //  window.location = "/show"
+                    //  window.location = "/show"
                 })
                 .catch(err => {
                     console.log('There is an failure', err.response.data.errors)
@@ -89,15 +86,12 @@ export const Register = () => {
                 })
         }
 
-
     }
-
-
 
     return (
 
         <Form className="container" onSubmit={submit} encType="multipart/form-data">
-
+            {/* simply if(errormsg) message(error, errorMsg) */}
             {errorMsg && message('error', errorMsg)}
             {successMsg && message('success', successMsg)}
             {loading && loader()}
@@ -127,7 +121,7 @@ export const Register = () => {
                 Submit
         </Button>
 
-            {/* <p> {JSON.stringify(formData)} </p> */}
+            <p> {JSON.stringify(formData)} </p>
 
 
         </Form>

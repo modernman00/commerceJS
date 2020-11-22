@@ -18,7 +18,7 @@ const SignIn = () => {
         const user = getLocalStorage('user')
         let redirect =""
         if(user){
-        redirect = (user.role === 0) ? "/profile" : "/user"}
+        redirect = (user.role === 0) ? "/profile" : "/admin"}
         cookieStorageCheck('token', 'user', redirect )
     }, [])
 
@@ -78,7 +78,7 @@ const SignIn = () => {
 
                 cookieStorageSet(res.data.token, res.data.user)
 
-                const redirect = (res.data.user.role === 0) ? "/profile" : "/user"
+                const redirect = (res.data.user.role === 0) ? "/profile" : "/admin"
 
                 cookieStorageCheck('token', 'user', redirect)               
      
